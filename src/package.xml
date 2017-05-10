@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>QueueRollbarItemSubmit</members>
+        <members>Rollbar</members>
+        <members>RollbarApiConnectionService</members>
+        <members>RollbarItem</members>
+        <members>RollbarItemTest</members>
+        <members>RollbarTest</members>
+        <members>TestUtils</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Rollbar_API_Setting.Rollbar_Test</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Rollbar_API_Setting__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <version>39.0</version>
+</Package>
