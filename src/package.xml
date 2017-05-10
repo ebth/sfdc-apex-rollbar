@@ -7,7 +7,6 @@
         <members>RollbarItem</members>
         <members>RollbarItemTest</members>
         <members>RollbarTest</members>
-        <members>TestUtils</members>
         <name>ApexClass</name>
     </types>
     <types>
