@@ -3,7 +3,7 @@ private class RollbarTest {
     static testMethod void shouldCalloutToRollbar() {
         RollbarItem testItem = new RollbarItem(
                 'fileName', 'className', 'methodName', 1,
-                'message', 'trace',
+                'exceptionClass', 'message', 'trace',
                 new List<Object>{
                         1
                 }

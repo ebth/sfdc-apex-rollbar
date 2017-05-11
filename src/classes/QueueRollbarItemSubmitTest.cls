@@ -4,7 +4,7 @@ private class QueueRollbarItemSubmitTest {
     static testMethod void shouldSuccessfullyCalloutToRollbar() {
         RollbarItem testItem = new RollbarItem(
                 'fileName', 'className', 'methodName', 1,
-                'message', 'trace',
+                'exceptionClass', 'message', 'trace',
                 new List<Object>{
                         1
                 }
