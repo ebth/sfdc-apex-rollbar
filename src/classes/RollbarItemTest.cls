@@ -9,6 +9,7 @@ private class RollbarItemTest {
                 'className',
                 'methodName',
                 1,
+                'exceptionClass',
                 'message',
                 'trace',
                 new List<Object>{
@@ -24,7 +25,6 @@ private class RollbarItemTest {
 
     static testMethod void shouldSetEnvironment() {
         Map<String, Object> testMap = testItem.buildRollbarItemMessage('foo', 'bar');
-//        Map<String, Object> dataMap = testMap.get('data');
         System.assertEquals('bar', ((Map<String, Object>) testMap.get('data')).get('environment'));
     }
 }

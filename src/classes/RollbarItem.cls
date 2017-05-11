@@ -4,16 +4,18 @@ public class RollbarItem {
     private String className;
     private String methodName;
     private Integer lineNumber;
+    private String exceptionClass;
     private String errorMessage;
     private String stackTrace;
     private List<Object> args;
 
     public RollbarItem(String fileName, String className, String methodName,
-            Integer lineNumber, String message, String trace, List<Object> args) {
+            Integer lineNumber, String exceptionClass, String message, String trace, List<Object> args) {
         this.fileName = fileName;
         this.className = className;
         this.methodName = methodName;
         this.lineNumber = lineNumber;
+        this.exceptionClass = exceptionClass;
         this.errorMessage = message;
         this.stackTrace = trace;
         this.args = args;
@@ -37,7 +39,7 @@ public class RollbarItem {
                                         }
                                 },
                                 'exception' => new Map<String, Object>{
-                                        'class' => className,
+                                        'class' => exceptionClass,
                                         'message' => errorMessage,
                                         'description' => stackTrace
                                 }
