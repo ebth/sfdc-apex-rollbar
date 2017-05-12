@@ -23,28 +23,29 @@ public class RollbarItem {
 
     public Map<String, object> buildRollbarItemMessage(String key, String env) {
         return new Map<String, Object>{
-                'access_token' => key,
-                'data' => new Map<String, Object>{
-                        'environment' => env,
-                        'body' => new Map<String, Object>{
-                                'trace' => new Map<String, Object>{
-                                        'frames' => new List<Map<String, Object>>{
-                                                new Map<String, Object>{
-                                                        'filename' => fileName,
-                                                        'class_name' => className,
-                                                        'method' => methodName,
-                                                        'lineno' => lineNumber,
-                                                        'varargspec' => args
+                'payload' => new Map<String, Object>{
+                        'access_token' => key,
+                        'data' => new Map<String, Object>{
+                                'environment' => env,
+                                'body' => new Map<String, Object>{
+                                        'trace' => new Map<String, Object>{
+                                                'frames' => new List<Map<String, Object>>{
+                                                        new Map<String, Object>{
+                                                                'filename' => fileName,
+                                                                'class_name' => className,
+                                                                'method' => methodName,
+                                                                'lineno' => lineNumber,
+                                                                'varargspec' => args
+                                                        }
+                                                },
+                                                'exception' => new Map<String, Object>{
+                                                        'class' => exceptionClass,
+                                                        'message' => errorMessage,
+                                                        'description' => stackTrace
                                                 }
                                         }
-                                },
-                                'exception' => new Map<String, Object>{
-                                        'class' => exceptionClass,
-                                        'message' => errorMessage,
-                                        'description' => stackTrace
                                 }
                         }
-
                 }
         };
     }

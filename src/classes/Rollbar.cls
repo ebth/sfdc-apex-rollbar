@@ -4,6 +4,13 @@ public class Rollbar {
         String itemMessage = setRollbarMessage(item, project);
         RollbarApiConnectionService srv = new RollbarApiConnectionService();
         HttpResponse resp = srv.postItem(itemMessage);
+
+        if (resp.getStatusCode() >= 400) {
+            System.debug(System.LoggingLevel.ERROR, resp.getStatusCode());
+            System.debug(System.LoggingLevel.ERROR, resp.getStatus());
+            System.debug(System.LoggingLevel.ERROR, resp.getBody());
+            System.debug(System.LoggingLevel.ERROR, itemMessage);
+        }
     }
 
     private static String setRollbarMessage(RollbarItem item, String project) {

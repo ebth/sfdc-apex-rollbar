@@ -12,7 +12,7 @@ public class RollbarApiConnectionService {
     }
 
     public HttpResponse postItem(String messageBody) {
-        req.setEndpoint(urlString + 'item');
+        req.setEndpoint(urlString + 'item/');
         req.setMethod('POST');
         req.setBody(messageBody);
         HttpResponse resp = caller.send(req);
