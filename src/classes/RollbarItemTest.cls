@@ -29,4 +29,21 @@ private class RollbarItemTest {
         Map<String, Object> data = (Map<String, Object>) ((Map<String, Object>) testMap.get('payload')).get('data');
         System.assertEquals('bar', data.get('environment'));
     }
+
+    static testMethod void shouldSetKwargs() {
+        RollbarItem kwargsTestItem = new RollbarItem(
+                'fileName',
+                'className',
+                'methodName',
+                1,
+                'exceptionClass',
+                'message',
+                'trace',
+                new Map<String, Object>{
+                        'hello' => 'world'
+                }
+        );
+
+        System.assertNotEquals(null, kwargsTestItem.kwargs);
+    }
 }
